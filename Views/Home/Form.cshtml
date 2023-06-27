@@ -1,0 +1,155 @@
+@using TPLOCAL1.Models
+@model Opinion
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="~/resources/Index.css">
+</head>
+
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <link rel="stylesheet" href="~/resources/Form.css">
+        <h1>Review Form TP HN</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Fill out form</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+        </ul>
+    </nav>
+
+    <form asp-controller="Home" asp-action="ValidationFormulaire" method="post">
+        <table>
+            <tr>
+                <th colspan="2">Personal Information</th>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" id="name" asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Forename:</td>
+                <td>
+                    <input type="text" id="forename" asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <select id="gender" asp-for="Gender" class="form-control">
+                        <option value="">Select a gender</option>
+                        <option value="Man">Man</option>
+                        <option value="Woman">Woman</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <input type="text" id="address" asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Zip code:</td>
+                <td>
+                    <input type="text" id="zipCode" asp-for="ZipCode" class="form-control" pattern="\d{5}" />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Town:</td>
+                <td>
+                    <input type="text" id="town" asp-for="Town" class="form-control" />
+                    <span asp-validation-for="Town" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email address:</td>
+                <td>
+                    <input type="email" id="email" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th colspan="2">Training Information</th>
+            </tr>
+            <tr>
+                <td>Start date training:</td>
+                <td>
+                    <input type="date" id="startDate" min="2020-01-01" max="2023-01-01" asp-for="StartDate"
+                        class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Type of training:</td>
+                <td>
+                    <select id="trainingType" asp-for="TrainingType" class="form-control">
+                        <option value="">Select a training</option>
+                        <option value="Cobol Training">Cobol Training</option>
+                        <option value="Object Training">Object Training</option>
+                        <option value="Dual Skills Training">Dual Skills Training</option>
+                    </select>
+                    <span asp-validation-for="TrainingType" class="text-danger"></span>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Training Reviews</th>
+            </tr>
+            <tr>
+                <td>Cobol Training:</td>
+                <td>
+                    <input type="text" id="cobolReview" asp-for="CobolReview" class="form-control"></textarea>
+                    <span asp-validation-for="CobolReview" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Training Purpose:</td>
+                <td>
+                    <input type="text" id="trainingPurpose" asp-for="TrainingPurpose" class="form-control" />
+                    <span asp-validation-for="TrainingPurpose" class="text-danger"></span>
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Validate" @*href="/Home/Index/FormCheck"*@/>
+    </form>
+    @* @if (TempData["ValidationSuccess"] != null && (bool)TempData["ValidationSuccess"])
+    {
+    <div class="success-message">
+    @TempData["SuccessMessage"]
+    </div>
+
+    <h2>Resultados</h2>
+
+    <p>Nombre: @Model.LastName</p>
+    <p>Apellido: @Model.FirstName</p>
+
+    }
+    else if (TempData["ErrorMessage"] != null)
+    {
+    <div class="error-message">
+    @TempData["ErrorMessage"]
+    </div>
+    } *@
+</body>
+
+</html>

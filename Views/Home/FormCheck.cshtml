@@ -1,0 +1,109 @@
+@using TPLOCAL1.Models
+@model Opinion
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="~/resources/Index.css">
+</head>
+
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <link rel="stylesheet" href="~/resources/Form.css">
+        <h1>Review Form TP HN</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Fill out form</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+        </ul>
+    </nav>
+
+    <form asp-controller="Home" asp-action="ValidationFormulaire" method="post">
+        <table>
+            <tr>
+                <th colspan="2">Personal Information</th>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>@Model.LastName</td>
+
+            </tr>
+            <tr>
+                <td>Forename:</td>
+                <td>@Model.FirstName</td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>@Model.Gender</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>@Model.Address</td>
+            </tr>
+            <tr>
+                <td>Zip code:</td>
+                <td>@Model.ZipCode</td>
+            </tr>
+            <tr>
+                <td>Town:</td>
+                <td>@Model.Town</td>
+            </tr>
+            <tr>
+                <td>Email address:</td>
+                <td>@Model.Email</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th colspan="2">Training Information</th>
+            </tr>
+            <tr>
+                <td>Start date training:</td>
+                <td>@Model.StartDate</td>
+            </tr>
+            <tr>
+                <td>Type of training:</td>
+                <td>@Model.TrainingType</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Training Reviews</th>
+            </tr>
+            <tr>
+                <td>Cobol Training:</td>
+                <td>@Model.CobolReview</td>
+            </tr>
+            <tr>
+                <td>Training Purpose:</td>
+                <td>@Model.TrainingPurpose</td>
+            </tr>
+        </table>
+    </form>
+    @* @if (TempData["ValidationSuccess"] != null && (bool)TempData["ValidationSuccess"])
+    {
+    <div class="success-message">
+    @TempData["SuccessMessage"]
+    </div>
+
+    <h2>Resultados</h2>
+
+    <p>Nombre: @Model.LastName</p>
+    <p>Apellido: @Model.FirstName</p>
+
+    }
+    else if (TempData["ErrorMessage"] != null)
+    {
+    <div class="error-message">
+    @TempData["ErrorMessage"]
+    </div>
+    } *@
+</body>
+
+</html>

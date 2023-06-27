@@ -1,0 +1,50 @@
+table {
+    width: 400px;
+    margin: 1000 auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #8c014c;
+    color: white;
+}
+
+td {
+    background-color: #f8f8f8;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #8c014c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

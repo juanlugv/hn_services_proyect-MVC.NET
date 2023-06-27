@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Opinion List</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+        <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .yes {
+            color: green;
+        }
+        
+        .no {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Opinion List</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Fill out form</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <p>
+            <a href="/Home/Index/Form">Fill in the form </a>
+        </p>
+    </section>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>Review Given</th>
+        </tr>
+        <tr>
+            <td>Name 1</td>
+            <td>First Name 1</td>
+            <td class="no">No</td>
+        </tr>
+        <tr>
+            <td>Name 2</td>
+            <td>First Name 2</td>
+            <td class="yes">Yes</td>
+        </tr>
+        <tr>
+            <td>Name 3</td>
+            <td>First Name 3</td>
+            <td class="no">No</td>
+        </tr>
+    </table>
+</body>
+
+</html>
